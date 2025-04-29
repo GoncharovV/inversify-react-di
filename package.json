@@ -1,7 +1,7 @@
 {
   "name": "inversify-react-di",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use DI in React in Angular-like way",
   "type": "module",
   "main": "dist/index.js",
@@ -24,7 +24,9 @@
     "url": "https://github.com/GoncharovV/inversify-react-di"
   },
   "homepage": "https://github.com/GoncharovV/inversify-react-di",
-  "files": ["dist/**"],
+  "files": [
+    "dist/**"
+  ],
   "author": "Vadim Goncharov",
   "peerDependencies": {
     "inversify": ">=6.0.0",
