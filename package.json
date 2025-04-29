@@ -1,10 +1,13 @@
 {
   "name": "inversify-react-di",
+  "private": "false",
   "version": "1.0.0",
-  "description": "Wrapper for better DI in react with InversifyJS",
+  "description": "DI in React with Angular-like way",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "vite --config vite.config.ts",
+    "dev": "vite",
     "lint": "eslint .",
     "build": "tsup"
   },
@@ -15,8 +18,14 @@
     "dependency injection",
     "DI"
   ],
-  "author": "Vadim Goncharov",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoncharovV/inversify-react-di"
+  },
+  "homepage": "https://github.com/GoncharovV/inversify-react-di",
+  "files": ["dist/**"],
+  "author": "Vadim Goncharov",
   "peerDependencies": {
     "inversify": ">=6.0.0",
     "react": ">=18.0.0",
