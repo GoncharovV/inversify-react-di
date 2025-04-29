@@ -1,0 +1,43 @@
+{
+  "name": "inversify-react-di",
+  "version": "1.0.0",
+  "description": "Wrapper for better DI in react with InversifyJS",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.ts",
+    "lint": "eslint .",
+    "build": "tsup"
+  },
+  "keywords": [
+    "react di",
+    "inversify",
+    "inversify-react",
+    "dependency injection",
+    "DI"
+  ],
+  "author": "Vadim Goncharov",
+  "license": "MIT",
+  "peerDependencies": {
+    "inversify": ">=6.0.0",
+    "react": ">=18.0.0",
+    "reflect-metadata": ">=0.2.0"
+  },
+  "devDependencies": {
+    "@goncharovv/eslint-config": "1.0.5",
+    "@types/node": "22.15.3",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.20.1",
+    "inversify": "6.2.2",
+    "mobx": "6.13.7",
+    "mobx-react-lite": "4.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "reflect-metadata": "0.2.2",
+    "tsup": "8.4.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.6",
+    "vite-plugin-dts": "^4.4.0"
+  }
+}

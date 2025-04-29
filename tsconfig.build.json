@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.build.tsbuildinfo",
+    "target": "ESNext",
+    "module": "commonjs",
+    "jsx": "react-jsx",
+    "rootDir": "./lib",
+    "outDir": "./dist",
+    "allowJs": false,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true
+  },
+  "include": ["lib/**/*.ts", "lib/**/*.tsx"]
+}
