@@ -2,6 +2,7 @@
 
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/inversify-react-di/peer/inversify)
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/inversify-react-di/peer/react)
+[![npm version](https://badge.fury.io/js/inversify-react-di.svg)](https://badge.fury.io/js/inversify-react-di)
 
 Set of hooks and decorators for better DX with [React](https://www.npmjs.com/package/react)+[InversifyJS](https://www.npmjs.com/package/inversify)
 
