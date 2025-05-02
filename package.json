@@ -1,7 +1,7 @@
 {
   "name": "inversify-react-di",
   "private": false,
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Use DI in React in Angular-like way",
   "type": "module",
   "main": "dist/index.js",
