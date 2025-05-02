@@ -1,10 +1,9 @@
 import { useContext, useEffect, useRef } from 'react';
 import { interfaces } from 'inversify';
 
-import { OnUnmount } from '../../dist';
 import { AbstractNewable, getModelData } from '../core';
 import { InversifyContext } from './context';
-import { isMountable, isUnmountable, OnMount } from './lifecycle';
+import { isMountable, isUnmountable, OnMount, OnUnmount } from './lifecycle';
 
 
 // TODO: write better JSDOC
