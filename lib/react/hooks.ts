@@ -1,9 +1,13 @@
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { interfaces } from 'inversify';
 
+import { OnUnmount } from '../../dist';
 import { AbstractNewable, getModelData } from '../core';
 import { InversifyContext } from './context';
+import { isMountable, isUnmountable, OnMount } from './lifecycle';
 
+
+// TODO: write better JSDOC
 
 export function usePersistentValue<T>(resolve: () => T): T {
   const ref = useRef<{ v: T; }>(null);
@@ -40,7 +44,24 @@ export function useInjection<T>(serviceId: interfaces.ServiceIdentifier<T>): T {
 }
 
 export function useModel<TModel>(model: AbstractNewable<TModel>): TModel {
-  const { token } = usePersistentValue(() => getModelData(model));
+  const { token, options } = usePersistentValue(() => getModelData(model));
 
-  return useInjection<TModel>(token);
+  const injected = useInjection<TModel>(token);
+
+  useEffect(() => {
+    if (options.scope !== 'transient') return;
+
+    if (isMountable(model)) {
+      (injected as OnMount).onMount?.();
+    }
+
+    return () => {
+      if (isUnmountable(model)) {
+        (injected as OnUnmount).onUnmount?.();
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return injected;
 }

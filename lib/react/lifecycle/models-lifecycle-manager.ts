@@ -1,6 +1,12 @@
 import { Container } from 'inversify';
 
-import { AbstractNewable, getModelFromContainer, isModel, Provider } from '../../core';
+import {
+  AbstractNewable,
+  getModelData,
+  getModelFromContainer,
+  isModel,
+  Provider,
+} from '../../core';
 import { isMountable, isUnmountable, OnMount, OnUnmount } from './lifecycle';
 
 
@@ -26,6 +32,10 @@ export class ProvidersLifecycleManager {
           : null;
 
       if (model) {
+        const { options } = getModelData(model);
+
+        if (options.scope !== 'singleton') return;
+
         if (isMountable(model)) {
           this.mountableModels.add(model);
         }

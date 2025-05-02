@@ -22,7 +22,7 @@ export const ModelsProvider: FC<ModelsProviderProps> = (props) => {
       container.parent = parentContainer;
     }
 
-    return container!;
+    return container;
   });
 
   const [lifecycleManager] = useState(() => new ProvidersLifecycleManager(container, models));
@@ -31,8 +31,8 @@ export const ModelsProvider: FC<ModelsProviderProps> = (props) => {
     lifecycleManager.onMount();
 
     return () => lifecycleManager.onUmount();
-    // Deps must never change
-  }, [lifecycleManager]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
   return (
