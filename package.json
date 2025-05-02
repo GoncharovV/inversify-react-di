@@ -41,7 +41,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.20.1",
     "inversify": "6.2.2",
-    "inversify-react-di": "1.0.1",
+    "inversify-react-di": "1.1.0",
     "mobx": "6.13.7",
     "mobx-react-lite": "4.1.0",
     "react": "19.0.0",
