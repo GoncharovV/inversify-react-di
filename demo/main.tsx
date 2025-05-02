@@ -1,9 +1,10 @@
 import { FC, StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { observer } from 'mobx-react-lite';
 
 import { Provider } from '../dist';
 import { ModelsProvider, useModel } from '../lib/react';
-import { Direction, LeftDirection, RightDirection } from './models';
+import { Direction, GlobalCounter, LeftDirection, RightDirection } from './models';
 
 
 const Display: FC = () => {
@@ -14,6 +15,11 @@ const Display: FC = () => {
 
 
 const root = createRoot(document.getElementById('root')!);
+
+// @ts-expect-error Debug hack
+window.destroy = () => {
+  root.unmount();
+};
 
 const LEFT_PROVIDERS: Provider[] = [
   {
@@ -27,7 +33,14 @@ const RIGHT_PROVIDERS: Provider[] = [
     provide: Direction,
     useClass: RightDirection,
   },
+  GlobalCounter,
 ];
+
+const CounterComponent = observer(() => {
+  const model = useModel(GlobalCounter);
+
+  return <button onClick={model.increment} type="button">{model.count}</button>;
+});
 
 
 root.render(
@@ -39,6 +52,8 @@ root.render(
 
       <ModelsProvider models={RIGHT_PROVIDERS}>
         <Display />
+        <CounterComponent />
+        <CounterComponent />
       </ModelsProvider>
     </div>
   </StrictMode>,
